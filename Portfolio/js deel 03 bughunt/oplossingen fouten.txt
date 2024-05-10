@@ -1,0 +1,30 @@
+1) het script-emlement zat nog niet in <head> van HTML
+
+2) de button had de klasse 'btnKopieer' in plaats van een id
+
+3) closing tag voor script -> </script> miste in de <head> van de HTML
+
+4) de const setup functie en de window loader miste
+
+5) moest .value zijn
+
+6) geen camelCasing gebruikt bij textInput in HTML
+
+7) typfout ->    <script> inbex.js </script>
+
+8) verkeerde id aangesproken in script 
+
+9) een extra () bij kopier() in het script
+
+10) .value geschreven ipv .textContent
+
+11) schreef de EventListener op z'n nederlands -> klik ipv click
+
+12) functie kopieer met een hoofletter gechreven
+
+13) miste de "window.addEventListener("load", setup  );"
+
+14) ¿ is hier zelfs een fout ?
+
+
+

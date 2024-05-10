@@ -1,0 +1,62 @@
+Zelftest na JS deel 06
+----------------------
+
+Belangrijke vooraf : gebruik de geziene technieken uit de cursus t.e.m. JS deel 06 (dus niks van elders of verderop in de cursus).
+
+Tijdens deze test mag je het internet NIET raadplegen, zet je laptop in vliegtuig modus.
+
+Als je wil indienen, steek EERST je hand op en vraag toestemming om weer op internet te mogen, dien DAN PAS in via Chamilo.
+
+Je mag al het leermateriaal gebruiken op je laptop en je dient enkel 100% eigen werk in. 
+
+Communicatie met medestudenten of anderen, of internet toegang, is niet toegelaten en wordt als fraude aanzien.
+
+Nadat je docent de uitleg heeft gegeven, heb je 1u tijd (IOEM : 1u15min) om deze opdracht af te werken en in te dienen.
+
+
+Gegeven zijn de volgende files :
+
+    instructies.txt
+        dit document
+
+    opdracht married with children - demo.mp4
+        video die het eindresultaat demonstreert
+
+    opdracht married with children - uitleg.mp4
+        video die de werking uitlegt adhv de DOM-tree
+
+    gegeven broncode.zip
+        dit is een .zip file met daarin de nodige broncode files en folders
+        je zult deze broncode moeten aanpassen, zippen en indienen
+
+LET OP : er zijn dus 2 filmpjes, bekijk eerst de DEMO video en dan het UITLEG video.
+
+In de gegeven broncode vind je :
+
+    /images
+        een folder met de nodige afbeeldingen
+    /styles/index.css
+        styling informatie van de selectie e.d.
+    index.html
+        hierin vind je (in commentaar) de HTML die je via Javascript zult moeten toevoegen
+    scripts/index.js
+        hierin staat alle uitleg over de code die je moet schrijven.
+        let vooral op de twee parallelle arrays bovenaan met de namen en afbeelding-urls.
+
+In index.js zul je drie stukken code moeten schrijven, wat er precies verwacht wordt staat in die file beschreven.
+
+Stop de volledige folder van je oplossing (dus alle benodigde files!) in een zip file.
+Als je docent die .zip file uitpakt moet alles gewoon werken zonder allerlei aanpassingen te vereisen.
+Je stopt enkel je oplossing in deze zip file, dus geen video's!
+
+De naam van de zip file is als volgt :
+
+    test tem 6 - familienaam voornaam.zip
+
+waarbij je natuurlijk je eigen namen invult.
+
+Zodra er nieuws is over de resultaten komt er een aankondiging op Chamilo.
+
+Veel succes!
+
+
