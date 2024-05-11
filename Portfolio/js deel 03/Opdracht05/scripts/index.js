@@ -8,6 +8,11 @@ const setup = () => {
         console.log('Hi There');
     }
 
+
+
+    let txtInput = document.getElementById("txtInput");
+    console.log( txtInput.value );
+
     let btnWijzig = document.getElementById("btnWijzig");
     btnWijzig.addEventListener("click", wijzig);
 }
