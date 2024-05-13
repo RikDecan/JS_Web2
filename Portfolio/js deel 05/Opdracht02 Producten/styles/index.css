@@ -1,0 +1,26 @@
+
+body{
+    font-family: "Comic Sans MS";
+    background: #9fb7ef;
+
+}
+
+table{
+    border: 7px double black;
+
+}
+
+td{
+    border: 2px groove black;
+    padding: 5px;
+
+}
+
+#btnBereken{
+
+}
+
+.wrapper{
+    margin-left: 50px;
+    margin-top: 50px;
+}
