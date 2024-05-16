@@ -27,10 +27,3 @@ window.addEventListener('load', setup);
 
 
 
-
-
-
-
-
-
-
