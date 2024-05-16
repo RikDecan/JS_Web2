@@ -20,8 +20,3 @@ window.addEventListener('load', setup);
 
 
 
-
-
-
-
-
