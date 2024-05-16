@@ -19,6 +19,7 @@ const saveSwatch = () => {
     let swatchComponents=document.querySelector("#swatchComponents");
     let swatch=buildSwatchComponent();
     swatchComponents.appendChild(swatch);
+
 };
 
 
@@ -43,6 +44,8 @@ const buildSwatchComponent = () => {
 
     // voeg de swatch en button toe aan de swatchcomponent
     swatch.appendChild(btnDelete);
+
+      
     return swatch;
 };
 
@@ -66,7 +69,8 @@ const update = () => {
 	document.querySelector("#lblBlue").textContent=blue;
 
 	let swatch=document.querySelector("#swatch");
-	swatch.style.background=`rgb(${red},${green},${blue})`;
+    let kleur = `${red},${green},${blue}`;
+	swatch.style.background=`rgb( ${kleur} )`;
 };
 
 window.addEventListener("load", initialize);
