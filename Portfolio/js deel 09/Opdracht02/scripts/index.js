@@ -25,9 +25,3 @@ window.addEventListener('load', setup);
 
 
 
-
-
-
-
-
-
