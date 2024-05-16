@@ -42,8 +42,8 @@ CSS-classes moeten krijgen, swatch en rounded
     display:inline-block;
     border:solid 1px black;
     margin:0 0 0 1em;
-    height:4em;
-    width:5em;
+    height:7em;
+    width:9em;
 }
 
 .swatch.rounded {
