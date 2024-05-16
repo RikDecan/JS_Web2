@@ -6,10 +6,10 @@ const setup = () => {
 }
 
 const deleteLi = (event) => {
-    let link = event.target;
-    let item = link.parentElement;
-    let list = item.parentElement;  
-    list.removeChild(item);
+    let linkA = event.target;
+    let item = linkA.parentElement;
+    let lijst = item.parentElement;  
+    lijst.removeChild(item);
 }
 
 window.addEventListener('load', setup);
