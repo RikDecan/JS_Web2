@@ -13,6 +13,3 @@ const deleteLi = (event) => {
 }
 
 window.addEventListener('load', setup);
-
-
-
