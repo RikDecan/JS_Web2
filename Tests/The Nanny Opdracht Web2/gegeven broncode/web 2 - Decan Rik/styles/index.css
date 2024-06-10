@@ -1,0 +1,31 @@
+/* Je mag dit bestand niet aanpassen */
+
+.character-selection {
+    text-align:center;
+}
+
+.name {
+    padding: 10px;
+    margin-right:10px;
+    cursor:pointer;
+    border:1px solid darkmagenta;
+    border-radius:10px;
+    display:inline-block;
+}
+
+.name.selected {
+    color:white;
+    background-color:darkmagenta;
+}
+
+.character-details {
+    text-align:center;
+}
+
+.character-image {
+    height : 150px;
+}
+
+.content {
+    border-top : 1px solid black;
+}

@@ -1,0 +1,56 @@
+Test Fruitsla
+-------------
+
+Tijdens deze test mag je het internet NIET raadplegen, zet je laptop in vliegtuig modus.
+
+Als je wil indienen, steek EERST je hand op en vraag toestemming om weer op internet te mogen,
+dien DAN PAS in via Chamilo.
+
+Je mag al het leermateriaal gebruiken op je laptop en je dient enkel 100% eigen werk in. Communicatie
+met medestudenten of anderen, of internet toegang, of AI-tools zijn niet toegelaten en worden als 
+fraude aanzien.
+
+Nadat je docent de uitleg heeft gegeven, heb je 3u tijd om deze opdracht af te werken en in te dienen,
+voor IOEM studenten met extra tijd is dit 3u45min.
+
+Gegeven zijn de volgende files :
+
+    instructies.txt
+        dit document
+    opdracht fruitsla - demonstratie.mp4
+        video die het eindresultaat toont, bekijk dit eerst!
+    opdracht fruitsla - uitleg domtree.mp4
+        video die toont hoe de kliks de domtree beïnvloeden
+    gegeven broncode.zip
+        dit is een .zip file met daarin de nodige broncode files en folders
+        je zult deze broncode moeten aanpassen, zippen en indienen
+
+In de gegeven broncode vind je :
+
+    /images
+        een folder met de nodige afbeeldingen
+    /styles/index.css
+        styling informatie van de selectie e.d.
+    index.html
+        hierin vind je (in commentaar) de HTML die je via Javascript zult moeten toevoegen
+    scripts/index.js
+        hierin staat alle uitleg over de code die je moet schrijven.
+
+In index.js zul je 8 TODO's moeten oplossen, wat er precies verwacht wordt staat
+in die file beschreven. 
+
+Stop de volledige folder van je oplossing (dus alle benodigde files!) in een zip file.
+Als je docent die .zip file uitpakt moet alles gewoon werken zonder allerlei aanpassingen
+te vereisen.
+
+De naam van de zip file is als volgt :
+
+    web 2 - familienaam voornaam.zip
+
+waarbij je natuurlijk je eigen namen invult.
+
+Zodra er nieuws is over de resultaten komt er een aankondiging op Chamilo.
+
+Veel succes!
+
+

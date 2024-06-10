@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Fruitsla kiezer</title>
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+	<script type="text/javascript" charset="utf-8" src="scripts/index.js"></script> 
+</head> 
+
+<body>
+<h1>Welkom bij de fruitsla kiezer!</h1>
+<section class="instructions">
+	Instructies
+	<ul>
+		<li>Klik op het fruit dat u aan de fruitsla wil toevoegen</li>
+		<li>Kies helemaal bovenaan hoeveel keer u dat fruit wil toevoegen per klik</li>
+		<li>Het laatst gekozen/gewijzigde ingredient staat aangegeven (rood kader & rode tekst)</li>
+	</ul>
+</section>
+<hr>
+<section class="amount-section">
+	Aantal om toe te voegen :
+	<select class="slcAmount">
+		<option value="1">1 stuk</option>
+		<option value="2">2 stuks</option>
+		<option value="5">5 stuks</option>
+	</select>
+	per klik
+</section>
+<section class="fruits-section">
+	<!--
+
+	Hierin moeten de volgende afbeeldingen terecht komen, op basis van de inhoud van het 'fruits' array :
+
+	<img src="images/fruit01.jpg" class="fruit" data-unique="KRS">
+	<img src="images/fruit02.jpg" class="fruit" data-unique="SNS">
+	<img src="images/fruit03.jpg" class="fruit" data-unique="BNN">
+	<img src="images/fruit04.jpg" class="fruit" data-unique="PER">
+	<img src="images/fruit05.jpg" class="fruit" data-unique="FRM">
+
+	Natuurlijk gebeurt dit dynamisch via Javascript in de 'setup' functie op basis van dat array, en dus
+	zeker NIET hardgecodeerd. In je finale oplossing moet de inhoud van dit HTML document
+	identiek zijn aan het HTML document uit de opgave.
+
+	Kijk goed naar het custom data-attribuut 'data-unique' wiens inhoud overeenkomt met de 'unique' property
+	uit de objecten in het 'fruits' array.
+
+	De laatst geklikte afbeelding krijgt een 'selected' CSS-class, dit zorgt voor het rode kader.
+
+	-->
+</section>
+<section class="salad-section">
+	Uw fruitsla samenstelling :
+<ul class="salad">
+	<!--
+
+	Hieronder zie je een voorbeeld van een fruitsla samenstelling (opgebouwd zoals in de demo video) :
+
+	<li class="salad-item" data-unique="KRS">Kersen, <span class="amount">1</span> stuk(s)</li>
+	<li class="salad-item selected" data-unique="SNS">Sinaasappelen, <span class="amount">2</span> stuk(s)</li>
+	<li class="salad-item" data-unique="BNN">Banaan, <span class="amount">1</span> stuk(s)</li>
+	<li class="salad-item" data-unique="PER">Peer, <span class="amount">1</span> stuk(s)</li>
+	<li class="salad-item" data-unique="FRM">Frambozen, <span class="amount">1</span> stuk(s)</li>
+
+    Natuurlijk gebeurt dit dynamisch via Javascript in de click event listener voor de fruit-afbeeldingen, en dus
+	zeker NIET hardgecodeerd. In je finale oplossing moet de inhoud van dit HTML document
+	identiek zijn aan het HTML document uit de opgave.
+
+    De precieze inhoud van deze lijst hangt af van de fruitsla samenstelling die de gebruiker koos.
+
+	Je ziet dat elk <li> element weerom een custom data-attribuut 'data-unique' heeft, zodat je code
+	kan achterhalen welk <li> element overeenkomt met welk soort fruit.
+	Elk heeft ook een <span> met class 'amount' waarin het aantal vervat zit van dat fruit in de fruitsla.
+
+	-->
+</ul>
+</section>
+<hr>
+<section class="instructions">
+	Gesponsord door
+	<ul>
+		<li>Uw lokale fruithandelaar</li>
+		<li>Big Phruit</li>
+	</ul>
+</section>
+</body>
+</html> 
