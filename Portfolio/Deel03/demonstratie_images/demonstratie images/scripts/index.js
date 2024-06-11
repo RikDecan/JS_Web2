@@ -14,22 +14,3 @@ const voegToe = () => {
 
 
 window.addEventListener('load',setup);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
