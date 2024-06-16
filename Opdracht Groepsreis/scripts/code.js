@@ -9,10 +9,21 @@ const setup = () => {
 
     // TODO
     // registreer de juiste input event listener op het invoerveld voor het aantal personen
+	let txtPersonCount = document.querySelector('#txtPersonCount');
+	txtPersonCount.addEventListener( 'input',personCountChanged )
+	
 
 
     // TODO
     // registreer de juiste click event listener op elk .delete element (icoontje)
+    let deleteIcon = document.querySelectorAll('.delete');
+
+    for (let i = 0; i < deleteIcon.length; i++) {
+		
+    deleteIcon[i].addEventListener('click', deleteCost);
+	
+    }
+	
 
 
 
@@ -25,6 +36,23 @@ const setup = () => {
 const deleteCost = (event) => {
     // TODO
     // verwijder de kost van het geklikte .delete element
+	
+	let lstCosts = document.querySelector('.lstCosts');
+	
+	let element = event.target;
+	console.log(element);
+	
+	let parent = element.parent;
+	console.log(parent);
+
+	let grandpapa = parent.parent;
+	console.log(grandpapa);
+
+	
+	
+	parent.remove;
+	
+
 
 
     // GEGEVEN (laat dit staan)
@@ -34,6 +62,10 @@ const deleteCost = (event) => {
 
 // Dit is de event listener die moet worden opgeroepen telkens de gebruiker het aantal personen aanpast
 const personCountChanged = () => {
+	
+	
+	console.log('input changed');
+	
     // GEGEVEN (laat dit staan)
     updateAllCosts();
 }
@@ -46,41 +78,58 @@ const addCost = () => {
 	let chkFixedCost = document.querySelector('#chkFixedCost');
 	let txtDescription = document.querySelector('#txtDescription');	
 	
-    // en stop ze in variabelen 'price' (string), 'isFixed' (een boolean) en 'description' (string)
-    const price= txtAmount.value; // vervang de lege string door iets zinvols!
+	const price= txtAmount.value;
 	console.log(price);
 	
-	let soortKost = "";
+	const description= txtDescription.value; 
+	console.log(description);
+	
 	
 	if (chkFixedCost.checked) {
 		
         const isFixed=true;
 		console.log(isFixed);
-		soortKost = 'fixed';
 		
 		let lstCosts = document.querySelector('.lstCosts');
-	    lstCosts.insertAdjacentHTML("beforeend",`<li><span class="cost" > isFixed = true </span></li>`);
-
-		
-		
-		
+	    lstCosts.insertAdjacentHTML("beforeend",`<li>0 </li>`);
 		
     } else {
 		
         const isFixed=false;
 		console.log(isFixed);
-		soortKost = 'per-person';
 		
 		let lstCosts = document.querySelector('.lstCosts');
-	    lstCosts.insertAdjacentHTML("beforeend",`<li><span class="cost" > isFixed = false </span></li>`);
-
-
+	    lstCosts.insertAdjacentHTML("beforeend",`<li>0 </li>`);
 	}	
 		
-    const description= txtDescription.value; 
-	console.log(description);
-	
     
+	let lstCosts = document.querySelector('.lstCosts');
+	let laatsteElement = lstCosts.lastElementChild ;
+	
+	laatsteElement.insertAdjacentHTML("beforeend",`<span class="cost" ></span>`);
+	
+	let LaatElem_firstSpan = laatsteElement.getElementsByTagName('span')[0];
+	let LaatElem_secondSpan = laatsteElement.getElementsByTagName('span')[1];
+	
+	
+	if (chkFixedCost.checked) {
+		
+		LaatElem_firstSpan.setAttribute("data-cost-fixed",`${price}`); 
+		LaatElem_firstSpan.textContent = description;
+		
+	} else {
+		
+		LaatElem_firstSpan.setAttribute("data-cost-per-person", `${price}`);
+		LaatElem_firstSpan.textContent = description;
+	}				
+
+	laatsteElement = lstCosts.lastElementChild 
+
+	
+    laatsteElement.insertAdjacentHTML("beforeend",`<img class="delete" src="images/remove.png">`);
+
+	console.log(laatsteElement);
+
 
     // TODO
     // Voeg de juiste HTML toe aan de DOM-tree, al naargelang het een vaste kost is of niet
@@ -88,17 +137,6 @@ const addCost = () => {
     // met (o.a.) behulp van de drie variabelen hierboven.
     // Voor het bedrag van de kost vul je gewoon 0 in, er staat immers onderaan een oproep
     // van updateCosts() die dat correct zal updaten!
-	
-	let lstCosts = document.querySelector('.lstCosts');
-	
-
-	
-
-	
-	
-
-//<li><span class="cost" data-cost-fixed="1000">0</span> Vervoer (heen en terug)<span><img class="delete" src="images/remove.png"></span></li>
-//<li><span class="cost" data-cost-per-person="100">0</span> Hotel nacht 1<span><img class="delete" src="images/remove.png"></span></li>
 
     // TODO
     // voeg de juiste click event listener toe op het nieuwe .delete element (icoontje)
