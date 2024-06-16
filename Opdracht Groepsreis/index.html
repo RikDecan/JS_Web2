@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script type="text/javascript" charset="utf-8" src="scripts/code.js"></script>
+    <title>Groepsreis planner</title>
+</head>
+<body>
+<div class="controls">
+    <h1>Kosten invoer</h1>
+    <label for="txtAmount">Bedrag</label><input type="number" min="0" id="txtAmount">
+    <input type="checkbox" id="chkFixedCost"><label for="chkFixedCost">Vaste kost</label><br>
+    <label for="txtDescription">Beschrijving</label><input id="txtDescription" type="text"><br>
+    <input type="button" id="btnAdd" value="Voeg toe">
+</div>
+<div class="costs">
+    <p>Kosten voor de groepsreis</p>
+    <span>Aantal deelnemers : </span><input id="txtPersonCount" type="number" min="0" value="1"><br>
+    <ul class="lstCosts">
+        <li><span class="cost" data-cost-fixed="1000">0</span> Vervoer (heen en terug)<span><img class="delete" src="images/remove.png"></span></li>
+        <li><span class="cost" data-cost-per-person="100">0</span> Hotel nacht 1<span><img class="delete" src="images/remove.png"></span></li>
+        <li><span class="cost" data-cost-per-person="10">0</span> Ingang museum dag 1<span><img class="delete" src="images/remove.png"></span></li>
+        <li><span class="cost" data-cost-fixed="150">0</span> Gids museum dag 1<span><img class="delete" src="images/remove.png"></span></li>
+    </ul>
+    <p>Totale kost : <span class="totalCost">0</span></p>
+    <p>Let op, deze kost totale kost bestaat normaliter uit</p>
+    <ul>
+        <li>vaste kosten (onafhankelijk van het aantal personen)</li>
+        <li>persoonsgebonden kosten (dus per persoon)</li>
+    </ul>
+</div>
+</body>
+</html>
