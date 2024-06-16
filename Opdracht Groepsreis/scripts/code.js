@@ -3,6 +3,8 @@
 const setup = () => {
     // TODO
     // registreer de juiste click event listener voor de "Voeg toe" button
+	let btnAdd = document.querySelector('#btnAdd');
+	btnAdd.addEventListener("click", addCost)
 
 
     // TODO
@@ -40,10 +42,45 @@ const personCountChanged = () => {
 const addCost = () => {
     // TODO
     // Haal het bedrag, de beschrijving en de status vd checkbox op uit de DOM-tree
+	let txtAmount = document.querySelector('#txtAmount');
+	let chkFixedCost = document.querySelector('#chkFixedCost');
+	let txtDescription = document.querySelector('#txtDescription');	
+	
     // en stop ze in variabelen 'price' (string), 'isFixed' (een boolean) en 'description' (string)
-    const price=""; // vervang de lege string door iets zinvols!
-    const isFixed=false; // vervang de false door iets zinvols!
-    const description=""; // vervang de lege string door iets zinvols!
+    const price= txtAmount.value; // vervang de lege string door iets zinvols!
+	console.log(price);
+	
+	let soortKost = "";
+	
+	if (chkFixedCost.checked) {
+		
+        const isFixed=true;
+		console.log(isFixed);
+		soortKost = 'fixed';
+		
+		let lstCosts = document.querySelector('.lstCosts');
+	    lstCosts.insertAdjacentHTML("beforeend",`<li><span class="cost" > isFixed = true </span></li>`);
+
+		
+		
+		
+		
+    } else {
+		
+        const isFixed=false;
+		console.log(isFixed);
+		soortKost = 'per-person';
+		
+		let lstCosts = document.querySelector('.lstCosts');
+	    lstCosts.insertAdjacentHTML("beforeend",`<li><span class="cost" > isFixed = false </span></li>`);
+
+
+	}	
+		
+    const description= txtDescription.value; 
+	console.log(description);
+	
+    
 
     // TODO
     // Voeg de juiste HTML toe aan de DOM-tree, al naargelang het een vaste kost is of niet
@@ -51,12 +88,24 @@ const addCost = () => {
     // met (o.a.) behulp van de drie variabelen hierboven.
     // Voor het bedrag van de kost vul je gewoon 0 in, er staat immers onderaan een oproep
     // van updateCosts() die dat correct zal updaten!
+	
+	let lstCosts = document.querySelector('.lstCosts');
+	
 
+	
+
+	
+	
+
+//<li><span class="cost" data-cost-fixed="1000">0</span> Vervoer (heen en terug)<span><img class="delete" src="images/remove.png"></span></li>
+//<li><span class="cost" data-cost-per-person="100">0</span> Hotel nacht 1<span><img class="delete" src="images/remove.png"></span></li>
 
     // TODO
     // voeg de juiste click event listener toe op het nieuwe .delete element (icoontje)
 
-
+    txtAmount.value=""; 
+    chkFixedCost=chkFixedCost.unchecked; 
+    txtDescription.value = "";
     // GEGEVEN  (laat dit staan)
     // update alle kosten (is niet efficient om alles uit te rekenen, maar makkelijk vr de programmeur ;)
     updateAllCosts();
@@ -72,4 +121,5 @@ const updateAllCosts = () => {
 
 };
 
+window.addEventListener("load", setup);
 
