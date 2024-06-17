@@ -11,22 +11,31 @@ const setup = () => {
     // registreer de juiste input event listener op het invoerveld voor het aantal personen
 	let txtPersonCount = document.querySelector('#txtPersonCount');
 	txtPersonCount.addEventListener( 'input',personCountChanged )
-	
+
 
 
     // TODO
     // registreer de juiste click event listener op elk .delete element (icoontje)
     let deleteIcon = document.querySelectorAll('.delete');
+	
+	let alleSpans = document.querySelectorAll('span');
+	
+	let spans = [];
+	
+    for (let i = 0; i < alleSpans.length; i++) {
+		if(alleSpans[i].classList.contains('cost')=== false){
+			spans.push(alleSpans[i]);
+		}		
+	}
+
+
 
     for (let i = 0; i < deleteIcon.length; i++) {
 		
-    deleteIcon[i].addEventListener('click', deleteCost);
+    deleteIcon[i].addEventListener('click', deleteCost(i));
 	
     }
 	
-
-
-
     // GEGEVEN (laat dit staan)
     // Zorg ervoor dat bij het starten, de kosten up-to-date worden gebracht
     updateAllCosts();
@@ -38,16 +47,6 @@ const deleteCost = (event) => {
     // verwijder de kost van het geklikte .delete element
 	
 	let lstCosts = document.querySelector('.lstCosts');
-	
-	let element = event.target;
-	console.log(element);
-	
-	let parent = element.parent;
-	console.log(parent);
-
-	let grandpapa = parent.parent;
-	console.log(grandpapa);
-
 	
 	
 	parent.remove;
@@ -64,8 +63,32 @@ const deleteCost = (event) => {
 const personCountChanged = () => {
 	
 	
-	console.log('input changed');
 	
+	let txtPersonCount = document.querySelector('#txtPersonCount');
+
+	
+	let aantalPersonen = txtPersonCount.value; 
+
+	
+	 let spannerPerPersoon = document.querySelectorAll('span.cost[data-cost-per-person]');
+	 
+	 for (let i = 0; i < spannerPerPersoon.length; i++) {
+
+		let atribuutwaarde =  spannerPerPersoon[i].getAttribute('data-cost-per-person');
+		let costPerPerson = atribuutwaarde * aantalPersonen
+		spannerPerPersoon[i].textContent = costPerPerson;
+		
+	 }
+	 
+	let spannerFixed = document.querySelectorAll('span.cost[data-cost-fixed]');
+	for (let i = 0; i < spannerFixed.length; i++) {
+
+		let atribuutwaarde =  spannerFixed[i].getAttribute('data-cost-fixed');
+		let costPerPerson = atribuutwaarde 
+		spannerFixed[i].textContent = costPerPerson;
+		
+	 }
+
     // GEGEVEN (laat dit staan)
     updateAllCosts();
 }
@@ -83,33 +106,22 @@ const addCost = () => {
 	
 	const description= txtDescription.value; 
 	console.log(description);
-	
-	
-	if (chkFixedCost.checked) {
+
+//<li><span class="cost" data-cost-fixed="1000">0</span> Vervoer (heen en terug)<span><img class="delete" src="images/remove.png"></span></li>
+
+    let lstCosts = document.querySelector('.lstCosts');
+
+	lstCosts.insertAdjacentHTML("beforeend", `<li>${description}</li>`);
 		
-        const isFixed=true;
-		console.log(isFixed);
-		
-		let lstCosts = document.querySelector('.lstCosts');
-	    lstCosts.insertAdjacentHTML("beforeend",`<li>0 </li>`);
-		
-    } else {
-		
-        const isFixed=false;
-		console.log(isFixed);
-		
-		let lstCosts = document.querySelector('.lstCosts');
-	    lstCosts.insertAdjacentHTML("beforeend",`<li>0 </li>`);
-	}	
-		
-    
-	let lstCosts = document.querySelector('.lstCosts');
+
 	let laatsteElement = lstCosts.lastElementChild ;
 	
-	laatsteElement.insertAdjacentHTML("beforeend",`<span class="cost" ></span>`);
+	laatsteElement.insertAdjacentHTML("afterbegin",`<span class="cost"></span>`);	
+    
+	laatsteElement.textContent = price;
 	
 	let LaatElem_firstSpan = laatsteElement.getElementsByTagName('span')[0];
-	let LaatElem_secondSpan = laatsteElement.getElementsByTagName('span')[1];
+	// let LaatElem_secondSpan = laatsteElement.getElementsByTagName('span')[1];
 	
 	
 	if (chkFixedCost.checked) {
@@ -156,8 +168,36 @@ const updateAllCosts = () => {
     // update de bedragen van alle kosten (i.e. de correcte bedragen in de spans invullen)
     // en bereken ook de totale kost en vul deze in bij de span met class totalCost.
 
+	let spannerFixed = document.querySelectorAll('span.cost[data-cost-fixed]');
+	for (let i = 0; i < spannerFixed.length; i++) {
+
+		let atribuutwaarde =  spannerFixed[i].getAttribute('data-cost-fixed');
+		let costPerPerson = atribuutwaarde 
+		spannerFixed[i].textContent = costPerPerson;
+		
+	 }
+
+	 let totaal = 0;
+
+
+	 let alleSpans = document.querySelectorAll('span.cost');
+	 for (let i = 0; i < alleSpans.length; i++) {
+
+		let txtContentAlsGetal = Number.parseInt(alleSpans[i].textContent,10)
+
+		console.log(txtContentAlsGetal);
+
+		totaal += txtContentAlsGetal; 
+
+	 }
+	 
+	 console.log('Totale som:', totaal);
+
+	 let spanTotalCost = document.querySelector('span.totalCost');
+	 spanTotalCost.textContent = totaal;
+
+
 
 };
 
 window.addEventListener("load", setup);
-
