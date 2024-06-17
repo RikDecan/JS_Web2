@@ -15,26 +15,11 @@ const setup = () => {
 
 
     // TODO
-    // registreer de juiste click event listener op elk .delete element (icoontje)
-    let deleteIcon = document.querySelectorAll('.delete');
-	
-	let alleSpans = document.querySelectorAll('span');
-	
-	let spans = [];
-	
-    for (let i = 0; i < alleSpans.length; i++) {
-		if(alleSpans[i].classList.contains('cost')=== false){
-			spans.push(alleSpans[i]);
-		}		
+	const deleteButtons = document.querySelectorAll('.delete');
+
+	for (let i = 0; i < deleteButtons.length; i++) {
+		deleteButtons[i].addEventListener('click', deleteCost);
 	}
-
-
-
-    for (let i = 0; i < deleteIcon.length; i++) {
-		
-    deleteIcon[i].addEventListener('click', deleteCost(i));
-	
-    }
 	
     // GEGEVEN (laat dit staan)
     // Zorg ervoor dat bij het starten, de kosten up-to-date worden gebracht
@@ -45,14 +30,11 @@ const setup = () => {
 const deleteCost = (event) => {
     // TODO
     // verwijder de kost van het geklikte .delete element
-	
-	let lstCosts = document.querySelector('.lstCosts');
-	
-	
-	parent.remove;
-	
 
-
+	const listItem = event.target.closest('li');
+	if (listItem) {
+		listItem.remove();
+	}
 
     // GEGEVEN (laat dit staan)
     // update alle kosten (kon efficienter, maar makkelijker voor de programmeur)
@@ -102,45 +84,34 @@ const addCost = () => {
 	let txtDescription = document.querySelector('#txtDescription');	
 	
 	const price= txtAmount.value;
-	console.log(price);
+	// console.log(price);
 	
 	const description= txtDescription.value; 
-	console.log(description);
+	// console.log(description);
 
 //<li><span class="cost" data-cost-fixed="1000">0</span> Vervoer (heen en terug)<span><img class="delete" src="images/remove.png"></span></li>
 
     let lstCosts = document.querySelector('.lstCosts');
 
-	lstCosts.insertAdjacentHTML("beforeend", `<li>${description}</li>`);
+	lstCosts.insertAdjacentHTML("beforeend", `<li><span class="cost">${price}</span> ${description} <span><img class="delete" src="images/remove.png"></span></li>`);
 		
-
 	let laatsteElement = lstCosts.lastElementChild ;
 	
-	laatsteElement.insertAdjacentHTML("afterbegin",`<span class="cost"></span>`);	
-    
-	laatsteElement.textContent = price;
-	
+    	
 	let LaatElem_firstSpan = laatsteElement.getElementsByTagName('span')[0];
-	// let LaatElem_secondSpan = laatsteElement.getElementsByTagName('span')[1];
 	
 	
 	if (chkFixedCost.checked) {
 		
 		LaatElem_firstSpan.setAttribute("data-cost-fixed",`${price}`); 
-		LaatElem_firstSpan.textContent = description;
 		
 	} else {
 		
 		LaatElem_firstSpan.setAttribute("data-cost-per-person", `${price}`);
-		LaatElem_firstSpan.textContent = description;
 	}				
 
-	laatsteElement = lstCosts.lastElementChild 
 
-	
-    laatsteElement.insertAdjacentHTML("beforeend",`<img class="delete" src="images/remove.png">`);
-
-	console.log(laatsteElement);
+	// console.log(laatsteElement);
 
 
     // TODO
@@ -185,17 +156,23 @@ const updateAllCosts = () => {
 
 		let txtContentAlsGetal = Number.parseInt(alleSpans[i].textContent,10)
 
-		console.log(txtContentAlsGetal);
+		// console.log(txtContentAlsGetal);
 
 		totaal += txtContentAlsGetal; 
 
 	 }
 	 
-	 console.log('Totale som:', totaal);
+	//  console.log('Totale som:', totaal);
 
 	 let spanTotalCost = document.querySelector('span.totalCost');
 	 spanTotalCost.textContent = totaal;
 
+
+	 const deleteButtons = document.querySelectorAll('.delete');
+
+	for (let i = 0; i < deleteButtons.length; i++) {
+		deleteButtons[i].addEventListener('click', deleteCost);
+	}
 
 
 };
