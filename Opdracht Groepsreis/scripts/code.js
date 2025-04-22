@@ -161,6 +161,8 @@ const updateAllCosts = () => {
 		totaal += txtContentAlsGetal; 
 
 	 }
+
+	 
 	 
 	//  console.log('Totale som:', totaal);
 
