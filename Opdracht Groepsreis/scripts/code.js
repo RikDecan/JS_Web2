@@ -162,9 +162,9 @@ const updateAllCosts = () => {
 
 	 }
 
+
 	 
-	 
-	//  console.log('Totale som:', totaal);
+	 console.log('Totale som:', totaal);
 
 	 let spanTotalCost = document.querySelector('span.totalCost');
 	 spanTotalCost.textContent = totaal;
