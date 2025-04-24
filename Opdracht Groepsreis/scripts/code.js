@@ -163,6 +163,8 @@ const updateAllCosts = () => {
 	 }
 
 
+
+
 	 
 	 console.log('Totale som:', totaal);
 
