@@ -160,12 +160,7 @@ const updateAllCosts = () => {
 
 		totaal += txtContentAlsGetal; 
 
-	 }
-
-
-
-
-	 
+	 }	 
 	 console.log('Totale som:', totaal);
 
 	 let spanTotalCost = document.querySelector('span.totalCost');
